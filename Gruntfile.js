@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                 }
             },
             fonts: {
-                files: paths.css,
+                files: paths.fonts,
                 options: {
                     livereload: true
                 }
