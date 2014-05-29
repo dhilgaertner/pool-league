@@ -3,17 +3,42 @@
 {% include '../includes/head.html' %}
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/public/system/views/header.html'" data-role="navigation"></div>
-    {% if adminEnabled %}
-    <section class="admin-menu">
-        <div data-ng-include="'/mean-admin/views/index.html'"></div>
-    </section>
-    {% endif %}
-    <section class="content">
-        <section class="container">
+    <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar" data-ng-include="'/public/system/views/header.html'" data-role="navigation"></div>
+
+    <div class="app">
+
+        <!-- Navbars -->
+        <div class="navbar navbar-app navbar-absolute-top">
+
+            <div class="navbar-brand navbar-brand-center" yield-to="title">
+                <span>ELO</span>
+            </div>
+
+            <div class="btn-group pull-left">
+                <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
+                    <i class="fa fa-bars"></i> Menu
+                </div>
+            </div>
+
+            <div class="btn-group pull-right" yield-to="navbarAction">
+                <div class="btn btn-navbar">
+                    <i class="fa fa-plus"></i> New
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-app navbar-absolute-bottom">
+            <div class="btn-group justified">
+                <a href="#/route1" class="btn btn-navbar btn-icon-only"><i class="fa fa-home fa-navbar"></i></a>
+                <a href="#/route2" class="btn btn-navbar btn-icon-only"><i class="fa fa-list fa-navbar"></i></a>
+            </div>
+        </div>
+
+        <div class="app-body">
             {% block content %}{% endblock %}
-        </section>
-    </section>
+        </div>
+    </div>
+
     {% include '../includes/foot.html' %}
 </body>
 

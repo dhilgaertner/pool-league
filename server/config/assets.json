@@ -1,7 +1,9 @@
 {
     "css": {
         "public/build/css/dist.min.css": [
-            "public/**/assets/css/*.css"
+            "public/**/assets/css/*.css",
+            "public/system/lib/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css",
+            "public/system/lib/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css"
         ]
     },
     "js": {
@@ -12,8 +14,9 @@
             "public/system/lib/angular-resource/angular-resource.js",
             "public/system/lib/angular-ui-router/release/angular-ui-router.js",
             "public/system/lib/jquery/dist/jquery.min.js",
-            "public/system/lib/angular-bootstrap/ui-bootstrap.js",
-            "public/system/lib/angular-bootstrap/ui-bootstrap-tpls.js",
+            "public/system/lib/angular-bootstrap/ui-bootstrap.min.js",
+            "public/system/lib/angular-bootstrap/ui-bootstrap-tpls.min.js",
+            "public/system/lib/mobile-angular-ui/dist/js/mobile-angular-ui.min.js",
             "public/init.js",
             "public/*/*.js",
             "public/*/{controllers,routes,services}/*.js"
