@@ -1,7 +1,8 @@
 {
     "css": {
         "public/build/css/dist.min.css": [
-            "public/**/assets/css/*.css",
+            "public/auth/assets/css/*.css",
+            "public/system/assets/css/*.css",
             "public/system/lib/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css",
             "public/system/lib/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css"
         ]
