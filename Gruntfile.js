@@ -3,8 +3,7 @@
 var paths = {
     js: ['*.js', 'server/**/*.js', 'public/**/*.js', 'test/**/*.js', '!test/coverage/**', '!public/system/lib/**', 'packages/**/*.js', '!packages/**/node_modules/**'],
     html: ['public/**/views/**', 'server/views/**', 'packages/**/public/**/views/**', 'packages/**/server/views/**'],
-    css: ['public/**/css/*.css', '!public/system/lib/**', 'packages/**/public/**/css/*.css'],
-    fonts: ['public/system/lib/font-awesome/fonts/*.ttf', 'public/system/lib/font-awesome/fonts/*.woff']
+    css: ['public/**/css/*.css', '!public/system/lib/**', 'packages/**/public/**/css/*.css']
 };
 
 module.exports = function(grunt) {
@@ -73,6 +72,14 @@ module.exports = function(grunt) {
                 files: '<%= assets.css %>'
             }
         },
+        copy: {
+            main: {
+                files: [
+                    {expand: true, cwd: 'public/system/lib/font-awesome/fonts/', src: ['fontawesome-webfont.ttf'], dest: 'public/build/fonts/'},
+                    {expand: true, cwd: 'public/system/lib/font-awesome/fonts/', src: ['fontawesome-webfont.woff'], dest: 'public/build/fonts/'}
+                ]
+            }
+        },
         nodemon: {
             dev: {
                 script: 'server.js',
@@ -119,7 +126,7 @@ module.exports = function(grunt) {
 
     //Default task(s).
     if (process.env.NODE_ENV === 'production') {
-        grunt.registerTask('default', ['clean','cssmin', 'uglify', 'concurrent']);
+        grunt.registerTask('default', ['clean','cssmin', 'uglify', 'copy', 'concurrent']);
     } else {
         grunt.registerTask('default', ['clean','jshint', 'csslint', 'concurrent']);
     }
@@ -129,5 +136,5 @@ module.exports = function(grunt) {
 
     // For Heroku users only.
     // Docs: https://github.com/linnovate/mean/wiki/Deploying-on-Heroku
-    grunt.registerTask('heroku:production', ['cssmin', 'uglify']);
+    grunt.registerTask('heroku:production', ['cssmin', 'uglify', 'copy']);
 };

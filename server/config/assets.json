@@ -22,9 +22,5 @@
             "public/*/*.js",
             "public/*/{controllers,routes,services}/*.js"
         ]
-    },
-    "fonts": {
-        "public/build/fonts/fontawesome-webfont.ttf": "public/system/lib/font-awesome/fonts/fontawesome-webfont.ttf",
-        "public/build/fonts/fontawesome-webfont.woff": "public/system/lib/font-awesome/fonts/fontawesome-webfont.woff"
     }
 }
