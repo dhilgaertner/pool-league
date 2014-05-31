@@ -3,7 +3,7 @@
 module.exports = {
     db: process.env.MONGOHQ_URL,
     app: {
-        name: 'MEAN - FullStack JS - Development'
+        name: 'Pool League - Development'
     },
     facebook: {
         clientID: 'APP_ID',
